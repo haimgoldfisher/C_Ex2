@@ -26,10 +26,14 @@ int is_routh_between(int mat[][], int i, int j)
 
 int shortest_routh(int mat[][], int i, int j)
 {
+    int result = -1;
     if (is_routh_between(mat, i ,j) == True)
     {
         /* code */
+        // result = ...
+        printf(result);
+        return 1;
     }
-    printf("-1");
+    printf(result);
     return 1;
 }

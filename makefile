@@ -5,12 +5,12 @@ LIBS=-lm
 OBJECTS_MAIN=main.o
 OBJECTS_MAT=my_mat.o
 
-all: libmymat.a libmymat.so connections connectionsd
+all: libmymat.a libmymat.so connectionss connections
 
-connections: $(OBJECTS_MAIN) libmymat.a #static
-	$(CC) $(FLAGS) -o connections $(OBJECTS_MAIN) libmymat.a $(LIBS)
-connectionsd: $(OBJECTS_MAIN) libmymat.so #dynamic
-	$(CC) $(FLAGS) -o connectionsd $(OBJECTS_MAIN) ./libmymat.so $(LIBS)
+connectionss: $(OBJECTS_MAIN) libmymat.a #static
+	$(CC) $(FLAGS) -o connectionss $(OBJECTS_MAIN) libmymat.a $(LIBS)
+connections: $(OBJECTS_MAIN) libmymat.so #dynamic
+	$(CC) $(FLAGS) -o connections $(OBJECTS_MAIN) ./libmymat.so $(LIBS)
 
 libmymat.a: $(OBJECTS_MAT)
 	$(AR) -rcs libmymat.a $(OBJECTS_MAT)
@@ -24,4 +24,4 @@ my_mat.o: my_mat.c my_mat.h
 .PHONY: clean all
 
 clean: 
-	rm -f *.o *.a *.so connections connectionsd
+	rm -f *.o *.a *.so connectionss connections

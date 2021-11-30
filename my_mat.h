@@ -3,7 +3,7 @@
 # define SIZE 10
 
 /* will create a 10x10 matrix with a 100 given integers array */
-int mat_maker(int[],int [SIZE][SIZE],int [SIZE][SIZE]);
+int mat_maker(int [SIZE][SIZE],int [SIZE][SIZE]);
 
 /* will return if there is a routh between two vertices in a graph */
 int is_route_between(int[SIZE][SIZE],int, int);

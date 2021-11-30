@@ -9,14 +9,14 @@
 
 int floyd_warshall(int mat[SIZE][SIZE],int route_mat[SIZE][SIZE]);
 
-int mat_maker(int toFill[],int mat[SIZE][SIZE],int route_mat[SIZE][SIZE]) // use pointer!!!!
+int mat_maker(int mat[SIZE][SIZE],int route_mat[SIZE][SIZE]) 
 {
-    int i, k, l;
+    int k, l;
     for (k = 0; k < SIZE; k++)
     {
         for (l = 0; l < SIZE; l++)
         {
-            mat[k][l] = toFill[i++];
+            scanf("%d",&mat[k][l]);
         }
     }
     floyd_warshall(mat, route_mat);
@@ -62,7 +62,7 @@ int floyd_warshall(int mat[SIZE][SIZE],int route_mat[SIZE][SIZE]){
             for(j=0;j<SIZE;j++)
             {
                 int new_value = 0;
-                if(route_mat[i][k]!=0 && route_mat[k][j]!=0)
+                if(route_mat[i][k]>0 && route_mat[k][j]>0)
                 {
                     new_value = route_mat[i][k] + route_mat[k][j];
                 }
@@ -70,7 +70,7 @@ int floyd_warshall(int mat[SIZE][SIZE],int route_mat[SIZE][SIZE]){
                 {
                     continue;
                 }
-                if(route_mat[i][j] == 0 && new_value!=0)
+                if(route_mat[i][j] == 0)
                 {
                     route_mat[i][j]=new_value;
                     continue;
@@ -82,5 +82,9 @@ int floyd_warshall(int mat[SIZE][SIZE],int route_mat[SIZE][SIZE]){
             }
         }        
     }
+    for(i=0;i<SIZE;i++)
+        {
+            route_mat[i][i] = 0;
+        }
     return 1;
 }

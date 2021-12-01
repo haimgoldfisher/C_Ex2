@@ -38,5 +38,5 @@ int main()
         }
         scanf("%c", &functionName); // the menu after we made our first function choose
     }
-    return 1;
+    return 0;
 }

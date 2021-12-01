@@ -20,7 +20,7 @@ int mat_maker(int mat[SIZE][SIZE],int route_mat[SIZE][SIZE])
         }
     }
     floyd_warshall(mat, route_mat);
-    return 1;
+    return 0;
 }
 
 int is_route_between(int route_mat[SIZE][SIZE],int i, int j)
@@ -39,10 +39,10 @@ int shortest_route(int route_mat[SIZE][SIZE],int i, int j)
     {
         result = route_mat[i][j];
         printf("%d",result);
-        return 1;
+        return 0;
     }
     printf("%d",result);
-    return 1;
+    return 0;
 }
 
 
@@ -86,5 +86,5 @@ int floyd_warshall(int mat[SIZE][SIZE],int route_mat[SIZE][SIZE]){
         {
             route_mat[i][i] = 0;
         }
-    return 1;
+    return 0;
 }
